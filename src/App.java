@@ -1,4 +1,5 @@
 
+import Controllers.PersonaController;
 import Models.Persona;
 
 public class App {
@@ -61,5 +62,43 @@ public class App {
                 // Si encontró a la persona en el arreglo de personas los datos de dicha persona
                 // y su posición
                 // Si no encontró a la persona en el arreglo de personas
+
+        PersonaController controller = new PersonaController();
+
+
+        controller.ordenarPorEdadDescendente(personas);
+        System.out.println("Personas ordenadas por edad descendente:");
+        for (Persona persona : personas) {
+            System.out.println(persona);
         }
+
+
+        int[] edadesABuscar = {25, 70};
+        for (int edad : edadesABuscar) {
+            int index = controller.buscarPorEdad(personas, edad);
+            if (index != -1) {
+                System.out.println("Encontrada persona con edad " + edad + ": " + " en posición " + index);
+            } else {
+                System.out.println("No se encontró persona con edad " + edad);
+            }
+        }
+
+        controller.ordenarPorNombreAscendente(personas);
+        System.out.println("\nPersonas ordenadas por nombre ascendente:");
+        for (Persona persona : personas) {
+            System.out.println(persona);
+        }
+
+
+        String[] nombresABuscar = {"Anais", "Miguel"};
+        for (String nombre : nombresABuscar) {
+            int index = controller.buscarPorNombre(personas, nombre);
+            if (index != -1) {
+                System.out.println("Encontrada persona con nombre " + nombre + ": " + " en posición " + index);
+            } else {
+                System.out.println("No se encontró persona con nombre " + nombre);
+            }
+        }
+    }
 }
+        

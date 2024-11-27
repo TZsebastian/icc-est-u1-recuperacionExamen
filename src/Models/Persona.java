@@ -10,6 +10,8 @@ public class Persona {
     String nombre; // Almacena el nombre de la carro
     int edad; // Almacena la edad de la carro
 
+    
+
     /**
      * Constructor para crear una nueva instancia de Persona con un nombre y edad
      * específicos.
@@ -22,4 +24,30 @@ public class Persona {
         this.edad = edad; // Asigna la edad pasada al atributo edad de la clase
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
+    public int getEdad() {
+        return edad;
+    }
+
+
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " (" + edad + " años)";
+    }
 }
